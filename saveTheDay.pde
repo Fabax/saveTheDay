@@ -13,7 +13,7 @@ import twitter4j.*;
 import twitter4j.internal.json.*;
 
 ModelTwitter model; 
-String[] hashtags = {"#doctorwho","#savetheday"};
+String[] hashtags = {"doctorwho","savetheday","doctorwhof4","dalek","DrWho"," DayOfTheDoctor"};
 boolean strartSketch = true;
 boolean initTwitter = true;
 int sec ;

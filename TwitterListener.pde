@@ -58,12 +58,13 @@ public class TwitterListener implements StatusListener{
     tweetInfos.setString("timeZone",_timeZone);
     tweetInfos.setString("time",_time);
 
+
     tweets.setJSONObject(counter, tweetInfos);
     counter ++;
      
     if(timer.isFinished()){
         String fileName = nameJson();
-        saveJSONArray(tweets, "jsons/"+fileName+".json");
+        saveJSONArray(tweets, "jsons/"+fileName+"-"+counter+".json");
 
         tweets =  new JSONArray();
         timer.start();
