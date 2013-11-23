@@ -8,8 +8,18 @@ import twitter4j.TwitterFactory;
  *
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
-public final class GetGeoDetails {
-    /**
+ public class GetGeoDetails extends
+ {
+     
+     //--------------------------------------
+     //  CONSTRUCTOR
+     //--------------------------------------
+     
+     public GetGeoDetails (arguments) {
+         // expression
+     }
+
+     /**
      * Usage: java twitter4j.examples.geo.GetGeoDetails [place id]
      *
      * @param args message
@@ -43,4 +53,5 @@ public final class GetGeoDetails {
             System.exit(-1);
         }
     }
-}
+ }
+

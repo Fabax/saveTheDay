@@ -12,17 +12,31 @@ import twitter4j.internal.http.*;
 import twitter4j.*;
 import twitter4j.internal.json.*;
 
-
 ModelTwitter model; 
 String[] hashtags = {"#doctorwho","#savetheday"};
-GetGeoDetails geo;
+boolean strartSketch = true;
+boolean initTwitter = true;
+int sec ;
 
 
 void setup(){
-	model = new ModelTwitter(60000);	
-	model.listenToHashtag(hashtags);
 }
 
 void draw(){
+	sec = second();
+	if(strartSketch && sec == 59){
+		start();
+		strartSketch = false;
+	}
+}
 
+void start(){
+	if(initTwitter){
+		model = new ModelTwitter(60000);	
+		model.listenToHashtag(hashtags);
+		println("in");
+		initTwitter = false;
+	}else{
+		println("out");
+	}
 }

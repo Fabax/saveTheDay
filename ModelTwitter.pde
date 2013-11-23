@@ -1,6 +1,7 @@
+  Twitter twitter;
 public class ModelTwitter {
   //configuration de twitter
-  Twitter twitter;
+
   User user;
   Configuration c;
   Status status;

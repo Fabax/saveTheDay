@@ -38,9 +38,6 @@ public class TwitterListener implements StatusListener{
     String timeZone = status.getUser().getTimeZone();
     String userLocation = status.getUser().getLocation();
     String time = tweetTime();
-    
-    geo = new GetGeoDetails(status);
-
 
     makeJson(userId,userName,messageTweet,imageUrl, lang, timeZone, userLocation, time);
   
@@ -52,17 +49,14 @@ public class TwitterListener implements StatusListener{
     JSONObject tweetInfos =  new JSONObject();
     JSONObject tweetId =  new JSONObject();
 
+    tweetInfos.setString("id",_id);
     tweetInfos.setString("userName",_user);
     tweetInfos.setString("message",_message);
-    tweetInfos.setString("id",_id);
     tweetInfos.setString("imageUrl",_imageUrl);
     tweetInfos.setString("language",_lang);
-    tweetInfos.setString("timeZone",_timeZone);
     tweetInfos.setString("userLocation",_userLocation);
+    tweetInfos.setString("timeZone",_timeZone);
     tweetInfos.setString("time",_time);
-   // tweetInfos.setString("userLocation",_userAdress);
-    //tweetInfos.setFloat("longitude",_longitude);
-   // tweetInfos.setString("tweetTime",_tweetTime);
 
     tweets.setJSONObject(counter, tweetInfos);
     counter ++;
